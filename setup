@@ -1,0 +1,8 @@
+apt-get update && apt-get upgrade -y 
+apt install -y wget python3-pip
+wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/install_docker.sh | bash
+sudo dpkg-query -W libseccomp2
+sudo service start docker
+sudo reboot
+wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/install_portainer.sh | bash
+docker run -d -p 8899:8899 -p 8081:8081 -v /var/www/scylla:/var/www/scylla --name scylla wildcat/scylla:latest
