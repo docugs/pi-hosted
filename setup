@@ -2,5 +2,5 @@ apt-get update && apt-get upgrade -y
 apt install -y wget python3-pip
 wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/install_docker.sh | bash
 sudo dpkg-query -W libseccomp2
-sudo service start docker
+service start docker
 
